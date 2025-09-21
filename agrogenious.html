@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroGenesis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" xintegrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" xintegrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" xintegrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" xintegrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .bg-container {
+            height: 100vh;
+            background-size: cover;
+            background-image: url('https://i.imgur.com/RiSIbqr.png');
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .tourism-card {
+            text-align: right;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            padding: 15px;
+            color: #2c3e50;
+            font-family: "Caveat", cursive;
+        }
+
+        .tourism-new {
+            background-size: cover;
+            background-image: url('https://i.pinimg.com/736x/a2/7f/f7/a27ff77ae35670691cdd0c8f2c922caa.jpg');
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .button {
+            color: black;
+            background-color: White;
+            width: 138px;
+            height: 36px;
+            border-radius: 10px;
+            margin: 8px;
+            border-color: Green;
+            border-width: 2px;
+            font-family: "Roboto", sans-serif;
+            font-weight: bold;
+        }
+
+        .main-heading {
+            font-family: "Caveat", cursive;
+            color: white;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .paragraph {
+            font-family: "Caveat", cursive;
+            font-style: italic;
+            color: white;
+        }
+
+        .favourite-places-bg-container {
+            background-image: url('https://i.imgur.com/lqy5O3G.png');
+            height: 100%;
+            min-height: 100vh;
+            width: 100%;
+            background-size: cover;
+            padding: 24px;
+        }
+
+        .favourite-places-heading {
+            color: darkgreen;
+            font-family: "Roboto", sans-serif;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: underline;
+            margin-bottom: 20px;
+        }
+
+        .favourite-place-card-container {
+            background-color: #e9a145;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 15px;
+            width: 100%;
+            color: white;
+            border: 2px solid green;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .favourite-place-card-heading {
+            color: #0f0e46;
+            font-family: "Roboto", sans-serif;
+            font-size: 23px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .favourite-place-card-description {
+            color: #6c6b70;
+            font-family: "Roboto", sans-serif;
+            font-size: 13px;
+        }
+
+        .favourite-place-card-image {
+            width: 80px;
+            height: 100px;
+            padding: 5px;
+            background-size: cover;
+            border-radius: 5px;
+        }
+
+        .favourite-place-card-text-container {
+            margin-right: 15px;
+        }
+
+        .detailed-view-bg-container {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQA1gLekaaiQL9Iegt1K7UZtD7snN5qSn0DQ&s");
+            min-height: 100vh;
+            background-size: cover;
+            padding: 20px;
+        }
+
+        .detailed-view-heading {
+            color: green;
+            font-family: "Roboto", sans-serif;
+            font-size: 28px;
+            font-weight: bold;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .detailed-view-card-container {
+            background-color: white;
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            margin: 24px auto;
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        .detailed-view-card-heading {
+            color: #0f0e46;
+            font-family: "Roboto", sans-serif;
+            font-size: 23px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .detailed-view-card-biglhead {
+            font-size: 20px;
+            text-decoration: underline;
+        }
+
+        .detailed-view-card-description {
+            color: #6c6b70;
+            font-family: "Roboto", sans-serif;
+            font-size: 13px;
+        }
+
+        .detailed-view-card-text-container {
+            padding: 16px;
+        }
+        
+        .weather-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding-left: 0;
+            justify-content: center;
+        }
+        
+        .forecast-day {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .weather-container {
+            background: rgba(0, 0, 50, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            max-width: 900px;
+            margin: 20px auto;
+            color: white;
+            text-align: center;
+        }
+
+        .youtube-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            max-width: 900px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .embed-responsive {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sectionHome">
+        <div class="bg-container d-flex flex-column justify-content-top">
+            <div class="tourism-card">
+                <h1 class="main-heading">AgroGenesis</h1>
+                <p>Your one-stop solution for crop recommendations and resources</p>
+                <button class="button" onclick="display('sectionFav')">Crops</button>
+                <button class="button" onclick="display('sectionResource')">Resources</button>
+                <button class="button" onclick="display('sectionWheather')">Weather</button>
+                <button class="button" onclick="display('sectionYt')">Youtube</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="sectionFav" style="display:none;">
+        <div class="favourite-places-bg-container">
+            <h1 class="favourite-places-heading">Select The Type of Soil</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <div class="favourite-place-card-container" onclick="display('sectionDetailedTaj')">
+                            <div>
+                                <h1 class="favourite-place-card-heading">Alluvial Soil</h1>
+                                <p class="favourite-place-card-description">Found in: Northern plains, river basins (Ganga, Brahmaputra)</p>
+                            </div>
+                            <img src="https://plus.unsplash.com/premium_photo-1675264750595-74d991564cf1?w=900" class="favourite-place-card-image" alt="Alluvial soil" />
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="favourite-place-card-container" onclick="display('sectionDetailedBlack')">
+                            <div>
+                                <h1 class="favourite-place-card-heading">Black Soil</h1>
+                                <p class="favourite-place-card-description">Found in: Maharashtra, Madhya Pradesh, Gujarat, Andhra Pradesh, Tamil Nadu</p>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1593028541686-83deb48d59c1?w=900" class="favourite-place-card-image" alt="Black soil" />
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="favourite-place-card-container" onclick="display('sectionDetailedRed')">
+                            <div>
+                                <h1 class="favourite-place-card-heading">Red Soil</h1>
+                                <p class="favourite-place-card-description">Found in: Tamil Nadu, Karnataka, Andhra Pradesh, Odisha, Chhattisgarh</p>
+                            </div>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxIH6PRPaMWaunGdg_6FbcSBBWg990sxmF8A&s" class="favourite-place-card-image" alt="Red soil" />
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="favourite-place-card-container" onclick="display('sectionLaterite')">
+                            <div>
+                                <h1 class="favourite-place-card-heading">Laterite Soil</h1>
+                                <p class="favourite-place-card-description">Found in: Western Ghats, Eastern Ghats, Kerala, Tamil Nadu, Karnataka</p>
+                            </div>
+                            <img src="data:image/jpeg;base64,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" class="favourite-place-card-image" alt="Laterite soil" />
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="favourite-place-card-container" onclick="display('sectionDesert')">
+                            <div>
+                                <h1 class="favourite-place-card-heading">Desert/Arid Soil</h1>
+                                <p class="favourite-place-card-description">Found in: Rajasthan, Gujarat, Haryana.</p>
+                            </div>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrSpqF4PnM_60wUTdmgGdXovwJq70HGxX0fQ&s" class="favourite-place-card-image" alt="Desert soil" />
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="favourite-place-card-container" onclick="display('sectionMountain')">
+                            <div>
+                                <h1 class="favourite-place-card-heading">Mountain/Forest Soil</h1>
+                                <p class="favourite-place-card-description">Found in: Himalayan regions, Kerala, Uttarakhand.</p>
+                            </div>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTixM4x6UUO50b-RLRVFRWWjvebw19NZzNACw&s" class="favourite-place-card-image" alt="Mountain soil" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn button" onclick="display('sectionHome')">Go Back</button>
+        </div>
+    </div>
+
+    <div id="sectionDetailedTaj" style="display:none;">
+        <div class="detailed-view-bg-container">
+            <h1 class="detailed-view-heading">Crop Recommendations</h1>
+            <div class="detailed-view-card-container">
+                <div id="alluvialCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#alluvialCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#alluvialCarousel" data-slide-to="1"></li>
+                        <li data-target="#alluvialCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://plus.unsplash.com/premium_photo-1675264750595-74d991564cf1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWxsdXZpYWwlMjBzb2lsfGVufDB8fDB8fHww" class="d-block w-100" alt="Alluvial soil landscape" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1523437094240-ed07e9bad1c7?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGFsbHV2aWFsJTIwc29pbHxlbnwwfHwwfHx8MA%3D%3D" class="d-block w-100" alt="Farmer working in alluvial soil" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1522773165162-de0fe7e10afa?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGFsbHV2aWFsJTIwc29pbHxlbnwwfHwwfHx8MA%3D%3D" class="d-block w-100" alt="Close-up of alluvial soil" />
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#alluvialCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#alluvialCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="detailed-view-card-text-container">
+                    <h1 class="detailed-view-card-heading">Alluvial Soil (Fertile and Well-Drained)</h1>
+                    <p class="detailed-view-card-description">
+                        Crop Recommendation for Alluvial Soil Based on Weather Conditions
+                        Alluvial soil is one of the most fertile soils, found in river plains like the Ganges, Brahmaputra, and Indo-Gangetic plains. It is rich in minerals, well-drained, and supports diverse crops. Below are crop recommendations based on different weather conditions.
+                    </p>
+                </div>
+                <p class="detailed-view-card-heading"> 1. Hot & Dry Climate (Above 30°C, Low Rainfall, Semi-Arid)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Bajra (Pearl Millet), Maize, Sorghum (Jowar)</p>
+                <p><b>Pulses:</b> Chickpeas (Gram), Pigeon Pea (Tur Dal)</p>
+                <p><b>Cash Crops:</b> Mustard, Sesame, Sunflower</p>
+                <p><b>Fruits:</b> Dates, Ber (Indian Jujube), Pomegranate</p>
+                <p><b>Vegetables:</b> Drumsticks, Okra (Bhindi), Bottle Gourd</p>
+                <p>These crops are drought-resistant, require less water, and grow well in well-drained alluvial soil.</p>
+                <p class="detailed-view-card-heading">2. Hot & Humid Climate (25°C–35°C, High Rainfall, Tropical)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Rice (Paddy), Maize</p>
+                <p><b>Pulses:</b> Green Gram (Moong), Black Gram (Urad)</p>
+                <p><b>Cash Crops:</b> Sugarcane, Jute, Cotton</p>
+                <p><b>Fruits:</b> Banana, Mango, Papaya, Guava</p>
+                <p><b>Vegetables:</b> Brinjal, Pumpkin, Tomato, Cucumber</p>
+                <p>The moisture-retaining property of alluvial soil supports water-intensive crops like rice and sugarcane.</p>
+                <p class="detailed-view-card-heading">3. Moderate Climate (15°C–25°C, Medium Rainfall, Temperate)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Wheat, Barley, Maize</p>
+                <p><b>Pulses:</b> Lentils, Peas</p>
+                <p><b>Cash Crops:</b> Mustard, Sunflower, Oilseeds</p>
+                <p><b>Fruits:</b> Citrus (Oranges, Lemons), Apples (in colder regions)</p>
+                <p><b>Vegetables:</b> Potatoes, Carrots, Cabbage, Cauliflower</p>
+                <p>These crops grow well in moderate temperatures and well-drained alluvial soil.</p>
+                <p class="detailed-view-card-heading">4. Cold & Wet Climate (10°C–20°C, High Rainfall, Hilly Regions)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Barley, Wheat, Millets</p>
+                <p><b>Pulses:</b> Peas, Lentils</p>
+                <p><b>Cash Crops:</b> Tea, Coffee, Cardamom, Spices</p>
+                <p><b>Fruits:</b> Apples, Pears, Cherries, Strawberries</p>
+                <p><b>Vegetables:</b> Broccoli, Spinach, Cabbage, Radish</p>
+                <p>Cold-weather crops thrive in alluvial soil’s mineral-rich composition, supporting high-value crops like apples and tea.</p>
+                <p class="detailed-view-card-heading">5. Cold & Dry Climate (Below 10°C, Low Rainfall, Mountainous)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Barley, Wheat</p>
+                <p><b>Pulses:</b> Lentils, Chickpeas</p>
+                <p><b>Cash Crops:</b> Saffron, Almonds, Walnut</p>
+                <p><b>Fruits:</b> Apples, Apricots, Plums</p>
+                <p><b>Vegetables:</b> Turnips, Beets, Peas</p>
+                <p>Hardy crops like barley and saffron require well-drained soil and withstand cold, dry conditions.</p>
+                <p class="detailed-view-card-heading">Final Crop Selection Based on Weather</p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Climate Condition</th>
+                            <th>Best Crops</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hot & Dry (>30°C, Low Rainfall)</td>
+                            <td>Bajra, Jowar, Chickpeas, Mustard, Dates</td>
+                        </tr>
+                        <tr>
+                            <td>Hot & Humid (25°C–35°C, High Rainfall)</td>
+                            <td>Rice, Sugarcane, Jute, Banana</td>
+                        </tr>
+                        <tr>
+                            <td>Moderate (15°C–25°C, Medium Rainfall)</td>
+                            <td>Wheat, Barley, Peas, Potatoes</td>
+                        </tr>
+                        <tr>
+                            <td>Cold & Wet (10°C–20°C, High Rainfall)</td>
+                            <td>Apples, Tea, Barley, Spinach</td>
+                        </tr>
+                        <tr>
+                            <td>Cold & Dry (<10°C, Low Rainfall)</td>
+                            <td>Barley, Wheat, Saffron, Walnuts</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn button" onclick="display('sectionFav')">Go Back</button>
+        </div>
+    </div>
+    
+    <div id="sectionDetailedBlack" style="display:none;">
+        <div class="detailed-view-bg-container">
+            <h1 class="detailed-view-heading">Black Soil</h1>
+            <div class="detailed-view-card-container">
+                <div id="blackCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#blackCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#blackCarousel" data-slide-to="1"></li>
+                        <li data-target="#blackCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://images.unsplash.com/photo-1593028541686-83deb48d59c1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmxhY2slMjBzb2lsfGVufDB8fDB8fHww" class="d-block w-100" alt="Black soil landscape" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://plus.unsplash.com/premium_photo-1675802522643-24ad09d1cf36?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBzb2lsfGVufDB8fDB8fHww" class="d-block w-100" alt="Black soil fields" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1611037500498-88243304bb11?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJsYWNrJTIwc29pbHxlbnwwfHwwfHx8MA%3D%3D" class="d-block w-100" alt="A plant growing from black soil" />
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#blackCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#blackCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="detailed-view-card-text-container">
+                    <h1 class="detailed-view-card-heading">Black Soil</h1>
+                    <p class="detailed-view-card-description">
+                        Crop Recommendation for Black Soil Based on Weather Conditions
+                        Black soil, also known as Regur soil or Cotton soil, is highly moisture-retentive, rich in clay and minerals like calcium, potassium, and magnesium. It is best suited for deep-rooted crops and requires proper drainage.
+                    </p>
+                </div>
+                <p class="detailed-view-card-heading">1. Hot & Dry Climate (Above 30°C, Low Rainfall, Semi-Arid)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Sorghum (Jowar), Pearl Millet (Bajra), Maize</p>
+                <p><b>Pulses:</b> Pigeon Pea (Tur Dal), Chickpeas (Gram)</p>
+                <p><b>Cash Crops:</b> Cotton (Most Suitable), Castor, Sunflower, Sesame</p>
+                <p><b>Fruits:</b> Pomegranate, Dates, Ber (Indian Jujube)</p>
+                <p><b>Vegetables:</b> Okra (Bhindi), Brinjal (Eggplant), Bottle Gourd</p>
+                <p>Black soil retains moisture, helping drought-resistant crops survive even in dry conditions.</p>
+                <p class="detailed-view-card-heading">2. Hot & Humid Climate (25°C–35°C, High Rainfall, Tropical)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Rice (only in well-drained black soil areas), Maize</p>
+                <p><b>Pulses:</b> Green Gram (Moong), Black Gram (Urad)</p>
+                <p><b>Cash Crops:</b> Cotton, Sugarcane, Soybean, Tobacco</p>
+                <p><b>Fruits:</b> Mango, Guava, Banana</p>
+                <p><b>Vegetables:</b> Tomato, Chillies, Onion, Garlic</p>
+                <p>Black soil's moisture retention supports sugarcane and cotton, which require extended water availability.</p>
+                <p class="detailed-view-card-heading">3. Moderate Climate (15°C–25°C, Medium Rainfall, Temperate)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Wheat, Barley</p>
+                <p><b>Pulses:</b> Lentils, Peas</p>
+                <p><b>Cash Crops:</b> Mustard, Sunflower, Groundnut</p>
+                <p><b>Fruits:</b> Citrus (Oranges, Lemons), Grapes (Most Suitable)</p>
+                <p><b>Vegetables:</b> Potatoes, Carrots, Cabbage</p>
+                <p>The balanced climate helps wheat, pulses, and oilseeds thrive in black soil’s rich nutrient content.</p>
+                <p class="detailed-view-card-heading">4. Cold & Wet Climate (10°C–20°C, High Rainfall, Hilly Regions)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Barley, Wheat</p>
+                <p><b>Pulses:</b> Peas, Lentils</p>
+                <p><b>Cash Crops:</b> Tea, Coffee (if well-drained), Spices (Cardamom, Cloves)</p>
+                <p><b>Fruits:</b> Apples, Pears, Plums</p>
+                <p><b>Vegetables:</b> Spinach, Cauliflower, Broccoli</p>
+                <p>Although black soil retains water, proper drainage is needed for crops like wheat and lentils in wet climates.</p>
+                <p class="detailed-view-card-heading">5. Cold & Dry Climate (Below 10°C, Low Rainfall, Mountainous)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Barley, Millets</p>
+                <p><b>Pulses:</b> Chickpeas, Lentils</p>
+                <p><b>Cash Crops:</b> Saffron, Walnut, Almonds</p>
+                <p><b>Fruits:</b> Apples, Apricots, Pomegranate</p>
+                <p><b>Vegetables:</b> Turnips, Beets, Peas</p>
+                <p>Black soil’s high moisture retention supports hardy crops like barley, which survive in cold, dry regions.</p>
+                <p class="detailed-view-card-heading">Final Crop Selection Based on Weather</p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Climate Condition</th>
+                            <th>Best Crops</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hot & Dry (>30°C, Low Rainfall)</td>
+                            <td>Jowar, Bajra, Cotton, Sesame, Pomegranate</td>
+                        </tr>
+                        <tr>
+                            <td>Hot & Humid (25°C–35°C, High Rainfall)</td>
+                            <td>Cotton, Sugarcane, Soybean, Banana</td>
+                        </tr>
+                        <tr>
+                            <td>Moderate (15°C–25°C, Medium Rainfall)</td>
+                            <td>Wheat, Barley, Mustard, Grapes</td>
+                        </tr>
+                        <tr>
+                            <td>Cold & Wet (10°C–20°C, High Rainfall)</td>
+                            <td>Barley, Tea, Coffee, Spinach</td>
+                        </tr>
+                        <tr>
+                            <td>Cold & Dry (<10°C, Low Rainfall)</td>
+                            <td>Barley, Chickpeas, Saffron, Apples</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn button" onclick="display('sectionFav')">Go Back</button>
+        </div>
+    </div>
+    
+    <div id="sectionDetailedRed" style="display:none;">
+        <div class="detailed-view-bg-container">
+            <h1 class="detailed-view-heading">Red Soil</h1>
+            <div class="detailed-view-card-container">
+                <div id="redCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#redCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#redCarousel" data-slide-to="1"></li>
+                        <li data-target="#redCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxIH6PRPaMWaunGdg_6FbcSBBWg990sxmF8A&s" class="d-block w-100" alt="Red soil landscape" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4vfjcbdLvwC4yhiCKBGRXsxHW-NA2oGOw8g&s" class="d-block w-100" alt="Tilled red soil" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShRWeK_wjiFWit6nwqxZ7FtxbYUcVsAiP8Qg&s" class="d-block w-100" alt="Erosion on red soil" />
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#redCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#redCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="detailed-view-card-text-container">
+                    <h1 class="detailed-view-card-heading">Red Soil</h1>
+                    <p class="detailed-view-card-description">
+                        Red soil is a type of soil rich in iron and aluminum, known for its reddish color. It is well-drained but not as fertile as alluvial soil.
+                    </p>
+                </div>
+                <p class="detailed-view-card-heading">1. Hot & Dry Climate (Above 30°C, Low Rainfall, Semi-Arid)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Sorghum (Jowar), Pearl Millet (Bajra), Finger Millet (Ragi)</p>
+                <p><b>Pulses:</b> Pigeon Pea (Tur Dal), Chickpeas (Gram), Green Gram (Moong)</p>
+                <p><b>Cash Crops:</b> Groundnut (Most Suitable), Castor, Sunflower, Cotton</p>
+                <p><b>Fruits:</b> Pomegranate, Ber (Indian Jujube), Guava</p>
+                <p><b>Vegetables:</b> Okra (Bhindi), Bottle Gourd, Drumsticks</p>
+                <p>Red soil drains quickly, making it ideal for drought-resistant crops like millets and groundnuts.</p>
+                <p class="detailed-view-card-heading">2. Hot & Humid Climate (25°C–35°C, High Rainfall, Tropical)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Rice (only with irrigation), Maize</p>
+                <p><b>Pulses:</b> Black Gram (Urad), Green Gram (Moong)</p>
+                <p><b>Cash Crops:</b> Sugarcane, Tobacco, Cotton, Soybean</p>
+                <p><b>Fruits:</b> Banana, Mango, Papaya, Pineapple</p>
+                <p><b>Vegetables:</b> Tomato, Onion, Chillies, Brinjal</p>
+                <p>Red soil’s ability to retain moisture for short durations supports crops like sugarcane and soybeans.</p>
+                <p class="detailed-view-card-heading">3. Moderate Climate (15°C–25°C, Medium Rainfall, Temperate)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Wheat, Barley, Maize</p>
+                <p><b>Pulses:</b> Lentils, Peas</p>
+                <p><b>Cash Crops:</b> Mustard, Sunflower, Oilseeds (Groundnut, Sesame)</p>
+                <p><b>Fruits:</b> Citrus (Oranges, Lemons), Grapes</p>
+                <p><b>Vegetables:</b> Potatoes, Carrots, Cabbage, Cauliflower</p>
+                <p>Moderate rainfall and temperature help crops like wheat and oilseeds grow well in red soil.</p>
+                <p class="detailed-view-card-heading">4. Cold & Wet Climate (10°C–20°C, High Rainfall, Hilly Regions)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Barley, Wheat</p>
+                <p><b>Pulses:</b> Peas, Lentils</p>
+                <p><b>Cash Crops:</b> Tea (Most Suitable), Coffee, Cardamom, Black Pepper</p>
+                <p><b>Fruits:</b> Apples, Pears, Plums</p>
+                <p><b>Vegetables:</b> Broccoli, Spinach, Radish</p>
+                <p>Red soil is excellent for plantation crops like tea and coffee in hilly areas.</p>
+                <p class="detailed-view-card-heading">5. Cold & Dry Climate (Below 10°C, Low Rainfall, Mountainous)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Barley, Millets</p>
+                <p><b>Pulses:</b> Chickpeas, Lentils</p>
+                <p><b>Cash Crops:</b> Saffron, Walnut, Almonds</p>
+                <p><b>Fruits:</b> Apples, Apricots, Pomegranate</p>
+                <p><b>Vegetables:</b> Turnips, Beets, Peas</p>
+                <p>Hardy crops like barley and saffron grow well in red soil’s low-nutrient but well-drained conditions.</p>
+                <p class="detailed-view-card-heading">Final Crop Selection Based on Weather</p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Climate Condition</th>
+                            <th>Best Crops</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hot & Dry (>30°C, Low Rainfall)</td>
+                            <td>Jowar, Bajra, Groundnut, Castor, Pomegranate</td>
+                        </tr>
+                        <tr>
+                            <td>Hot & Humid (25°C–35°C, High Rainfall)</td>
+                            <td>Cotton, Sugarcane, Soybean, Banana</td>
+                        </tr>
+                        <tr>
+                            <td>Moderate (15°C–25°C, Medium Rainfall)</td>
+                            <td>Wheat, Barley, Mustard, Grapes</td>
+                        </tr>
+                        <tr>
+                            <td>Cold & Wet (10°C–20°C, High Rainfall)</td>
+                            <td>Tea, Coffee, Cardamom, Spinach</td>
+                        </tr>
+                        <tr>
+                            <td>Cold & Dry (<10°C, Low Rainfall)</td>
+                            <td>Barley, Chickpeas, Saffron, Apples</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn button" onclick="display('sectionFav')">Go Back</button>
+        </div>
+    </div>
+    
+    <div id="sectionLaterite" style="display:none;">
+        <div class="detailed-view-bg-container">
+            <h1 class="detailed-view-heading">Laterite Soil</h1>
+            <div class="detailed-view-card-container">
+                <div id="lateriteCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#lateriteCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#lateriteCarousel" data-slide-to="1"></li>
+                        <li data-target="#lateriteCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="data:image/jpeg;base64,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" class="favourite-place-card-image" alt="laterite soil" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60JNLGwMUlSk8BBa7YsuSMk2VXO4TO3Tj6g&s" class="d-block w-100" alt="Laterite soil texture" />
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#lateriteCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"> </span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#lateriteCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"> </span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="detailed-view-card-text-container">
+                    <h1 class="detailed-view-card-heading">Laterite Soil</h1>
+                    <p class="detailed-view-card-description">
+                        Laterite soil is a type of soil rich in iron and aluminum, formed in hot and humid tropical regions due to intense leaching caused by heavy rainfall. It is characterized by its reddish-brown color, high clay content, and low fertility due to the loss of essential nutrients like nitrogen, potassium, and phosphorus.
+                    </p>
+                </div>
+                <p class="detailed-view-card-heading">1. Hot & Dry Climate (Above 30°C, Low Rainfall, Semi-Arid)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Sorghum (Jowar), Pearl Millet (Bajra), Finger Millet (Ragi)</p>
+                <p><b>Pulses:</b> Pigeon Pea (Tur Dal), Green Gram (Moong), Black Gram (Urad)</p>
+                <p><b>Cash Crops:</b> Groundnut, Cashew (Most Suitable), Sunflower</p>
+                <p><b>Fruits:</b> Ber (Indian Jujube), Tamarind, Pomegranate</p>
+                <p><b>Vegetables:</b> Okra (Bhindi), Brinjal (Eggplant), Bottle Gourd</p>
+                <p>Laterite soil has good drainage and supports drought-resistant crops like millets, pulses, and cashew.</p>
+                <p class="detailed-view-card-heading">2. Hot & Humid Climate (25°C–35°C, High Rainfall, Tropical)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Rice (with proper irrigation), Maize</p>
+                <p><b>Pulses:</b> Black Gram (Urad), Cowpea</p>
+                <p><b>Cash Crops:</b> Tea, Coffee, Rubber, Coconut (Most Suitable), Areca Nut</p>
+                <p><b>Fruits:</b> Banana, Pineapple, Mango, Jackfruit</p>
+                <p><b>Vegetables:</b> Chillies, Tomato, Ginger, Turmeric</p>
+                <p>Laterite soil retains moisture in humid conditions and is ideal for plantation crops like tea, coffee, and rubber.</p>
+                <p class="detailed-view-card-heading">3. Moderate Climate (15°C–25°C, Medium Rainfall, Temperate)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Wheat, Barley</p>
+                <p><b>Pulses:</b> Lentils, Peas</p>
+                <p><b>Cash Crops:</b> Cashew, Sunflower, Mustard</p>
+                <p><b>Fruits:</b> Grapes, Guava, Citrus (Oranges, Lemons)</p>
+                <p><b>Vegetables:</b> Potatoes, Carrots, Cabbage</p>
+                <p>With proper organic matter addition, laterite soil can support oilseeds, wheat, and temperate fruits.</p>
+                <p class="detailed-view-card-heading">4. Cold & Wet Climate (10°C–20°C, High Rainfall, Hilly Regions)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Barley, Millets</p>
+                <p><b>Pulses:</b> Peas, Lentils</p>
+                <p><b>Cash Crops:</b> Tea (Most Suitable), Coffee, Cardamom, Black Pepper</p>
+                <p><b>Fruits:</b> Apples, Pears, Plums</p>
+                <p><b>Vegetables:</b> Broccoli, Spinach, Radish</p>
+                <p>The acidic nature of laterite soil is ideal for plantation crops like tea, coffee, and spices.</p>
+                <p class="detailed-view-card-heading">5. Cold & Dry Climate (Below 10°C, Low Rainfall, Mountainous)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Barley, Millets</p>
+                <p><b>Pulses:</b> Chickpeas, Lentils</p>
+                <p><b>Cash Crops:</b> Saffron, Walnut, Almonds</p>
+                <p><b>Fruits:</b> Apples, Apricots, Pomegranate</p>
+                <p><b>Vegetables:</b> Turnips, Beets, Peas</p>
+                <p class="detailed-view-card-heading">Final Crop Selection Based on Weather</p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Climate Condition</th>
+                            <th>Best Crops</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hot & Dry (>30°C, Low Rainfall)</td>
+                            <td>Jowar, Bajra, Cashew, Groundnut, Pomegranate</td>
+                        </tr>
+                        <tr>
+                            <td>Hot & Humid (25°C–35°C, High Rainfall)</td>
+                            <td>Tea, Coffee, Rubber, Coconut, Banana</td>
+                        </tr>
+                        <tr>
+                            <td>Moderate (15°C–25°C, Medium Rainfall)</td>
+                            <td>Wheat, Barley, Mustard, Grapes</td>
+                        </tr>
+                        <tr>
+                            <td>Cold & Wet (10°C–20°C, High Rainfall)</td>
+                            <td>Tea, Coffee, Cardamom, Spinach</td>
+                        </tr>
+                        <tr>
+                            <td>Cold & Dry (<10°C, Low Rainfall)</td>
+                            <td>Barley, Chickpeas, Saffron, Apples</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn button" onclick="display('sectionFav')">Go Back</button>
+        </div>
+    </div>
+    
+    <div id="sectionDesert" style="display:none;">
+        <div class="detailed-view-bg-container">
+            <h1 class="detailed-view-heading">Desert/Arid Soil</h1>
+            <div class="detailed-view-card-container">
+                <div id="desertCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#desertCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#desertCarousel" data-slide-to="1"></li>
+                        <li data-target="#desertCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrSpqF4PnM_60wUTdmgGdXovwJq70HGxX0fQ&s" class="d-block w-100" alt="Desert soil landscape" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_bWqB0c-wt1tc9fHCnXiNEh8Mex-c4K5G9A&s" class="d-block w-100" alt="Close-up of desert soil" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxctC_v4I_yPUb9ie_TqeRmhhz9RmLYnRY8Q&s" class="d-block w-100" alt="Plant growing in desert soil" />
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#desertCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#desertCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="detailed-view-card-text-container">
+                    <h1 class="detailed-view-card-heading">Desert/Arid Soil</h1>
+                    <p class="detailed-view-card-description">
+                        Desert soil is a type of arid soil found in dry, desert regions. It has the following characteristics:
+                        Low Organic Matter, Sandy & Rocky Texture, Poor Water Retention, High Mineral Content, Alkaline Nature.
+                    </p>
+                </div>
+                <p class="detailed-view-card-heading">1. Hot & Dry Climate (Above 35°C, Low Rainfall, Desert Regions)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Pearl Millet (Bajra), Sorghum (Jowar), Foxtail Millet</p>
+                <p><b>Pulses:</b> Pigeon Pea (Tur Dal), Green Gram (Moong), Chickpeas (Gram)</p>
+                <p><b>Cash Crops:</b> Aloe Vera, Date Palm, Castor, Guar (Cluster Beans)</p>
+                <p><b>Fruits:</b> Ber (Indian Jujube), Pomegranate, Fig, Dragon Fruit</p>
+                <p><b>Vegetables:</b> Okra (Bhindi), Bottle Gourd, Drumsticks, Watermelon</p>
+                <p>These crops are highly drought-resistant and require minimal water.</p>
+                <p class="detailed-view-card-heading">2. Hot & Humid Climate (25°C–35°C, Occasional Rainfall, Semi-Arid)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Sorghum, Maize</p>
+                <p><b>Pulses:</b> Black Gram (Urad), Cowpea</p>
+                <p><b>Cash Crops:</b> Castor, Sunflower, Guar</p>
+                <p><b>Fruits:</b> Papaya, Banana, Amla (Indian Gooseberry)</p>
+                <p><b>Vegetables:</b> Tomato, Chillies, Onion, Garlic</p>
+                <p>These crops can tolerate occasional rainfall and grow well in semi-arid conditions with proper soil management.</p>
+                <p class="detailed-view-card-heading">3. Moderate Climate (15°C–25°C, Occasional Rainfall, Semi-Arid to Dryland)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Wheat, Barley (with irrigation)</p>
+                <p><b>Pulses:</b> Lentils, Chickpeas</p>
+                <p><b>Cash Crops:</b> Mustard, Sunflower</p>
+                <p><b>Fruits:</b> Citrus (Oranges, Lemons), Grapes</p>
+                <p><b>Vegetables:</b> Potatoes, Carrots, Radish</p>
+                <p>These crops require controlled irrigation but can adapt to semi-arid conditions.</p>
+                <p class="detailed-view-card-heading">4. Cold & Dry Climate (Below 15°C, Low Rainfall, High Altitude Desert)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Barley, Millets</p>
+                <p><b>Pulses:</b> Peas, Lentils</p>
+                <p><b>Cash Crops:</b> Saffron, Walnut, Almonds</p>
+                <p><b>Fruits:</b> Apples, Apricots, Pomegranate</p>
+                <p><b>Vegetables:</b> Turnips, Beets, Cabbage</p>
+                <p>Hardy crops like barley, saffron, and apples are well-suited to high-altitude cold deserts like Ladakh and Spiti Valley.</p>
+                <p class="detailed-view-card-heading">Final Crop Selection Based on Weather</p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Climate Condition</th>
+                            <th>Best Crops</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hot & Dry (>35°C, Low Rainfall, Desert)</td>
+                            <td>Bajra, Jowar, Aloe Vera, Guar, Dates</td>
+                        </tr>
+                        <tr>
+                            <td>Hot & Humid (25°C–35°C, Occasional Rainfall)</td>
+                            <td>Maize, Sunflower, Guar, Papaya</td>
+                        </tr>
+                        <tr>
+                            <td>Moderate (15°C–25°C, Semi-Arid to Dryland)</td>
+                            <td>Wheat, Barley, Mustard, Citrus</td>
+                        </tr>
+                        <tr>
+                            <td>Cold & Dry (<15°C, High Altitude Desert)</td>
+                            <td>Barley, Peas, Saffron, Apples</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn button" onclick="display('sectionFav')">Go Back</button>
+        </div>
+    </div>
+    
+    <div id="sectionMountain" style="display:none;">
+        <div class="detailed-view-bg-container">
+            <h1 class="detailed-view-heading">Mountain/Forest Soil</h1>
+            <div class="detailed-view-card-container">
+                <div id="mountainCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#mountainCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#mountainCarousel" data-slide-to="1"></li>
+                        <li data-target="#mountainCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTixM4x6UUO50b-RLRVFRWWjvebw19NZzNACw&s" class="d-block w-100" alt="Mountain soil forest" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMy2Xbp0z_Tjhx1Qp_K-8_vYvZWJGct8MoQw&s" class="d-block w-100" alt="Hilly landscape with trees" />
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzR_gJt6042o-0fW9yY1Y7_61Y1V2e88t4Hw&s" class="d-block w-100" alt="Mountain soil texture" />
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#mountainCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#mountainCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="detailed-view-card-text-container">
+                    <h1 class="detailed-view-card-heading">Mountain/Forest Soil</h1>
+                    <p class="detailed-view-card-description">
+                        Soil in mountain and forest regions is typically rich in organic matter due to the decomposition of leaves, plants, and trees. It has a high humus content but can be thin and acidic.
+                    </p>
+                </div>
+                <p class="detailed-view-card-heading">1. Cold & Wet Climate (10°C–20°C, High Rainfall, Hilly Regions)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Barley, Wheat, Maize</p>
+                <p><b>Pulses:</b> Peas, Lentils, Rajma (Kidney Beans)</p>
+                <p><b>Cash Crops:</b> Tea (Most Suitable), Coffee, Cardamom, Black Pepper</p>
+                <p><b>Fruits:</b> Apples, Pears, Plums, Kiwi</p>
+                <p><b>Vegetables:</b> Broccoli, Cabbage, Cauliflower, Spinach</p>
+                <p>The cool temperature and moisture retention support plantation crops like tea and spices, along with temperate fruits.</p>
+                <p class="detailed-view-card-heading">2. Cold & Dry Climate (Below 10°C, Low Rainfall, High Altitude)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Barley, Buckwheat, Millets</p>
+                <p><b>Pulses:</b> Chickpeas, Lentils</p>
+                <p><b>Cash Crops:</b> Saffron, Walnut, Almonds</p>
+                <p><b>Fruits:</b> Apples, Apricots, Pomegranate</p>
+                <p><b>Vegetables:</b> Turnips, Beets, Peas, Carrots</p>
+                <p>Hardy crops like barley, saffron, and apples are well-suited to high-altitude cold deserts like Ladakh and Spiti Valley.</p>
+                <p class="detailed-view-card-heading">3. Moderate Climate (15°C–25°C, Medium Rainfall, Mid-Altitude Hills)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Wheat, Maize, Barley</p>
+                <p><b>Pulses:</b> Rajma (Kidney Beans), Peas, Black Gram (Urad)</p>
+                <p><b>Cash Crops:</b> Tea, Coffee, Sunflower</p>
+                <p><b>Fruits:</b> Citrus (Oranges, Lemons), Grapes, Guava</p>
+                <p><b>Vegetables:</b> Potatoes, Cabbage, Radish</p>
+                <p>The moderate temperature allows for diverse crops, including wheat, citrus fruits, and pulses.</p>
+                <p class="detailed-view-card-heading">4. Hot & Humid Climate (25°C–35°C, High Rainfall, Tropical Mountains)</p>
+                <p><b>Best Crops:</b></p>
+                <p><b>Cereals:</b> Rice, Maize</p>
+                <p><b>Pulses:</b> Green Gram (Moong), Black Gram (Urad)</p>
+                <p><b>Cash Crops:</b> Coffee, Tea, Rubber, Spices (Cardamom, Cloves)</p>
+                <p><b>Fruits:</b> Mango, Banana, Pineapple, Papaya</p>
+                <p><b>Vegetables:</b> Tomato, Chillies, Ginger, Turmeric</p>
+                <p>These crops thrive in high-rainfall, tropical mountain regions like the Western Ghats and Northeast India.</p>
+                <p class="detailed-view-card-heading">Final Crop Selection Based on Weather</p>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Climate Condition</th>
+                            <th>Best Crops</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cold & Wet (10°C–20°C, High Rainfall)</td>
+                            <td>Tea, Coffee, Apples, Rajma, Broccoli</td>
+                        </tr>
+                        <tr>
+                            <td>Cold & Dry (<10°C, Low Rainfall)</td>
+                            <td>Barley, Saffron, Almonds, Apricots</td>
+                        </tr>
+                        <tr>
+                            <td>Moderate (15°C–25°C, Mid-Altitude Hills)</td>
+                            <td>Wheat, Maize, Citrus, Potatoes</td>
+                        </tr>
+                        <tr>
+                            <td>Hot & Humid (25°C–35°C, High Rainfall)</td>
+                            <td>Rice, Tea, Rubber, Mango</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn button" onclick="display('sectionHome')">Go Back</button>
+        </div>
+    </div>
+    
+    <div id="sectionResource" style="display:none;">
+        <div class="tourism-new ">
+            <h1 class="detailed-view-heading">Resource Optimization for Farmers</h1>
+            <p>A Detailed Guide</p>
+            <p>Resource optimization helps farmers maximize yield while minimizing costs, water usage, and environmental impact. Below are key areas where farmers can optimize resources efficiently.</p>
+            <p class="detailed-view-card-heading">1. Soil Management & Fertility Optimization.</p>
+            <p>Efficient soil management ensures better crop yields and reduces the need for chemical fertilizers.</p>
+            <p class="detailed-view-card-heading">A. Soil Testing & Analysis.</p>
+            <p>Regular soil testing (every 6 months) helps determine nutrient levels. Farmers can use government-provided soil testing kits or local agricultural labs. Based on soil test results, apply fertilizers in the correct proportion.</p>
+            <p class="detailed-view-card-heading">B. Organic Farming & Bio-Fertilizers.</p>
+            <p>Use compost, farmyard manure (FYM), and vermicompost to improve soil health. Bio-fertilizers like Rhizobium, Azotobacter, and Mycorrhiza improve nutrient uptake. Crop rotation with nitrogen-fixing plants (like legumes) reduces fertilizer dependency.</p>
+            <p class="detailed-view-card-heading">C. Precision Fertilization.</p>
+            <p>Use Fertigation (applying fertilizers through irrigation) to reduce wastage. Slow-release fertilizers (like neem-coated urea) minimize nutrient loss. Use drone-based fertilizer application for even distribution.</p>
+            <p class="detailed-view-card-heading">2. Water Resource Optimization.</p>
+            <p>Water is a critical resource, and its efficient use is essential for sustainable farming.</p>
+            <p class="detailed-view-card-heading">A. Drip Irrigation & Sprinklers.</p>
+            <p>Drip irrigation saves up to 60% of water compared to traditional methods. Sprinklers reduce evaporation and are effective for uneven terrains. Subsurface irrigation minimizes water loss by directly hydrating roots.</p>
+            <p class="detailed-view-card-heading">B. Rainwater Harvesting.</p>
+            <p>Digging farm ponds and check dams helps store rainwater. Roof-top rainwater harvesting can be used for greenhouse farming. Mulching with straw or plastic sheets reduces water evaporation.</p>
+            <p class="detailed-view-card-heading">C. Smart Water Scheduling.</p>
+            <p>IoT-based sensors can monitor soil moisture and automate irrigation. Alternate Wetting and Drying (AWD) technique in paddy fields saves water.</p>
+            <p class="detailed-view-card-heading">3. Crop Selection & Diversification.</p>
+            <p>Choosing the right crops based on soil, water availability, and climate increases profitability.</p>
+            <p class="detailed-view-card-heading">A. Climate-Specific Crops.</p>
+            <p>Drought-resistant crops: Bajra, Jowar, Millets, Mustard. High rainfall crops: Rice, Sugarcane, Banana. Cold-region crops: Apple, Barley, Walnut.</p>
+            <p class="detailed-view-card-heading">B. Intercropping & Companion Planting.</p>
+            <p>Growing different crops together (e.g., Maize + Beans) increases yield and prevents pests. Agroforestry: Planting trees with crops improves soil fertility.</p>
+            <p class="detailed-view-card-heading">C. High-Yield & Hybrid Seeds.</p>
+            <p>Use certified hybrid seeds that require less water and fertilizer. Genetically modified (GM) crops (e.g., Bt Cotton) help reduce pest attacks.</p>
+            <p class="detailed-view-card-heading">4. Pest & Disease Management.</p>
+            <p>Reducing chemical pesticides and using eco-friendly methods saves costs and improves soil health.</p>
+            <p class="detailed-view-card-heading">A. Integrated Pest Management (IPM).</p>
+            <p>Biological control: Using natural predators (e.g., ladybugs for aphids). Trap cropping: Growing pest-attracting plants around main crops (e.g., Marigold for nematodes). Neem-based pesticides reduce chemical use.</p>
+            <p class="detailed-view-card-heading">B. Crop Rotation & Cover Crops</p>
+            <p>Rotating crops prevents soil depletion and reduces pest cycles. Cover crops (like clover) suppress weeds and improve soil health.</p>
+            <p class="detailed-view-card-heading">C. Smart Pest Monitoring</p>
+            <p>IoT-based pest detection cameras help identify infestations early. AI-based apps can diagnose plant diseases using mobile cameras.</p>
+            <p class="detailed-view-card-heading">5. Farm Mechanization & Automation</p>
+            <p>Mechanized farming reduces labor costs and improves efficiency.</p>
+            <p class="detailed-view-card-heading">A. Equipment Optimization</p>
+            <p>Use precision tractors, seed drills, and transplanters for efficient sowing. Laser land leveling saves water and improves irrigation efficiency. Rotavators break soil efficiently, reducing plowing costs.</p>
+            <p class="detailed-view-card-heading">B. AI & IoT in Farming</p>
+            <p>Drones for pesticide spraying and aerial crop monitoring. Automated greenhouses with climate control for high-value crops. GPS-guided tractors ensure accurate planting.</p>
+            <p class="detailed-view-card-heading">C. Shared Farming Equipment (Co-operatives)</p>
+            <p>Renting tractors, harvesters, and seeders through farmer cooperatives reduces individual investment. Government-backed Custom Hiring Centers (CHCs) provide affordable access to farm machinery.</p>
+            <p class="detailed-view-card-heading">6. Financial & Market Optimization</p>
+            <p>Optimizing financial resources ensures profitability and reduces losses.</p>
+            <p class="detailed-view-card-heading">A. Government Schemes & Subsidies</p>
+            <p>PM-Kisan Samman Nidhi provides direct financial aid to farmers. Soil Health Card Scheme helps with personalized fertilizer recommendations. Subsidized crop insurance (PMFBY) protects against climate risks.</p>
+            <p class="detailed-view-card-heading">B. Direct-to-Consumer (D2C) Marketing</p>
+            <p>Selling produce directly to consumers via farmer markets or online platforms increases profit. Avoid middlemen by using FPOs (Farmer Producer Organizations).</p>
+            <p class="detailed-view-card-heading">C. Storage & Post-Harvest Management</p>
+            <p>Cold storage prevents spoilage of perishable goods. Solar-powered drying units help preserve grains and spices. Warehouse receipt system allows farmers to store crops and sell when prices are high.</p>
+            <p class="detailed-view-card-heading">7. Renewable Energy in Farming</p>
+            <p>Using renewable energy reduces operational costs and dependency on fossil fuels.</p>
+            <p class="detailed-view-card-heading">A. Solar-Powered Pumps</p>
+            <p>Government subsidies make solar pumps affordable. Saves on electricity costs and works in remote areas.</p>
+            <p class="detailed-view-card-heading">B. Bio-Gas & Wind Energy</p>
+            <p>Bio-gas plants convert farm waste into cooking gas and organic manure. Wind energy can power remote farm equipment.</p>
+        </div>
+        <button class="btn button" onclick="display('sectionHome')">Go Back</button>
+    </div>
+    
+    <div id="sectionWheather" style="display:none;">
+        <div>
+            <h1 class="detailed-view-heading">9-Day Weather Forecast</h1>
+            <div class="weather-container">
+                <input type="text" id="location" placeholder="Enter Location" value="Pune">
+                <button onclick="getWeather()">Get Weather</button>
+                <div class="weather-info" id="weatherInfo"></div>
+            </div>
+        </div>
+        <button class="btn button" onclick="display('sectionHome')">Go Back</button>
+    </div>
+    
+    <div id="sectionYt" style="display:none;">
+        <div class="youtube-container">
+            <h1 class="detailed-view-heading">Guidance For Beginners</h1>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fRlUhUWS0Hk" allowfullscreen></iframe>
+            </div>
+            <div>
+                <button class="btn button" onclick="display('sectionHome')">Go Back</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function display(sectionId) {
+            const sections = ['sectionHome', 'sectionFav', 'sectionDetailedTaj', 'sectionDetailedBlack', 'sectionDetailedRed', 'sectionLaterite', 'sectionDesert', 'sectionMountain', 'sectionResource', 'sectionWheather', 'sectionYt'];
+            sections.forEach(id => {
+                const section = document.getElementById(id);
+                if (section) {
+                    section.style.display = (id === sectionId) ? 'block' : 'none';
+                }
+            });
+        }
+    
+        async function getWeather() {
+            const location = document.getElementById('location').value;
+            const apiKey = '92bb3284e968458cbda91321252603';
+            const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=9&aqi=yes&alerts=no`;
+            const weatherInfoDiv = document.getElementById('weatherInfo');
+            weatherInfoDiv.innerHTML = '<p>Loading weather data...</p>';
+    
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+    
+                let forecastHTML = `<h2 class="text-center">${data.location.name}, ${data.location.country}</h2>`;
+                forecastHTML += `<p class="text-center">Current: ${data.current.temp_c}°C, ${data.current.condition.text}</p>`;
+                forecastHTML += `<img src="${data.current.condition.icon}" alt="Weather Icon" class="mx-auto d-block">`;
+    
+                forecastHTML += '<div class="weather-info">';
+                data.forecast.forecastday.forEach(day => {
+                    forecastHTML += `
+                        <div class="forecast-day">
+                            <h4>${day.date}</h4>
+                            <p>${day.day.condition.text}</p>
+                            <p>🌡 Max: ${day.day.maxtemp_c}°C</p>
+                            <p>❄ Min: ${day.day.mintemp_c}°C</p>
+                            <p>☔ Rain: ${day.day.daily_chance_of_rain}%</p>
+                            <img src="${day.day.condition.icon}" alt="Weather Icon">
+                        </div>
+                    `;
+                });
+                forecastHTML += '</div>';
+    
+                weatherInfoDiv.innerHTML = forecastHTML;
+            } catch (error) {
+                weatherInfoDiv.innerHTML = '<p>Could not fetch weather data. Please check your API key or location and try again.</p>';
+                console.error("Error fetching data:", error);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            getWeather();
+        });
+    </script>
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+</body>
+</html>
